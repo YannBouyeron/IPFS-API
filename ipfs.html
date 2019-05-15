@@ -10,90 +10,85 @@
 	
 		<style type="text/css">
 		
-			body {
-			background-color:#D0CDC9;
-			}
-		 
 		
-		  .thumb {
+		
+	.grid {
+	
+	
+  display : grid;
+  
+  grid-gap: 10px;
+			grid-template-columns: 460px 1fr;
+			grid-template-rows: 100px 1fr 1fr;
+			grid-template-areas: "haut haut" 
+					                 "navi load" 
+					                 "navi result";
+                  
+      min-height: 680px;
+      max-height: 680px;
+      
+  background-color: grey;
+      
+	}
+	
+
+	header {
+  
+	  background-color: #e6ecef;
+	  grid-area : haut;
+	  border-radius: 5px;
+	  padding: 10px;
+	}
+	
+	nav {
+	  
+	  background-color: #e6ecef;
+	  grid-area : navi;
+	  border-radius: 5px;
+	  padding: 10px;
+	  overflow: scroll;
+	}
+		
+		
+	.load {
+	
+		background-color: #e6ecef;
+		grid-area: load;
+		border-radius: 5px;
+	  padding: 10px;
+	  font-size: 1.3em;
+	}
+
+		
+	.result {
+	
+		background-color: #e6ecef;
+		grid-area: result;
+		border-radius: 5px;
+	  padding: 10px;
+	  overflow: scroll;
+	}		
+			
+			
+			
+	textarea {
+	
+	position: relative;
+	width: 97%;
+	margin-left: 1%;
+	margin-right: 2%;
+	
+	}
+	
+	 .thumb {
 		    height: 75px;
 		    border: 1px solid #000;
 		    margin: 10px 5px 0 0; 
 		  }
-		  
-		  .ttt {
-			  margin: 10% 10% 10% 10%; 
-		  }
-		  
-		  textarea {
-			  width: 99%;
-			  
-			  }
-		  
-		  .header {
-			  border: 1px solid #000;
-			  position: fixed;
-			  
-			  top: 0,5%;
-			  left: 2%;
-			  right: 2%;
-			  height: 12%;
-			  background-color: #F8F2EA;
-			  
-		  }
+		 
 			
-			.gauche {
-			
-			  border: 1px solid #000;
-			  position: fixed;
-			  top : 14%;
-			  left: 2%;
-			  right: 51%;
-			  height: 85%;
-			  padding-right: 1%;
-			  padding-left: 1%;
-			  background-color: #F8F2EA;
-			  overflow: scroll;
-			
-			}
-			
-			.tarea {
-			  border: 1px solid #000;
-			  position: fixed;
-			  top : 14%;
-			  left: 51%;
-			  right: 2%;
-			  height: 85%;
-			  padding-right: 1%;
-			  padding-left: 1%;
-			  background-color: #F8F2EA;
-			  
-		  }
+		 
 		
-			
-		
-			.hasher {
-			  width: 100%;
-			  margin-top: 2%;
-			  height: 48%;
-				border: 1px solid #000;
-			  overflow: scroll;
-			  background-color: white;
-		  }
-		  
-		  .cadre {
-			  border-top: 1px solid #000;
-			  border-bottom: 1px solid #000;
-			  width: 100%;
-			  margin-top: 2%;
-			  font-size: 0.8em;
-			  background-color: #F8F2EA;
-			  
-		  } 
-		  
-		  h1 {
-		  textsize:2em;
-		  }
 		  
 		  
 		  
@@ -144,28 +139,30 @@
 		
 	</head>
 	
-	<body>
+	<body class="grid">
 	
-	<div class = "header">
+	<header>
 	<h1 style= "text-align:center;" >IPFS API</h1>
 	<p style = "text-align:center;"></p>
-	</div>
+	</header>
 	
 	
-	<div class="gauche" id="gauche">
+	<nav>
 	
 	<p>L’IPFS ou InterPlanetary File System est un protocole pair à pair (p2p) de distribution de contenu adressable par hypermédia. Il permet de "stocker" des fichiers ou des arborescences de fichiers de manière décentralisée et permanente*, et d’y accéder via un noeud ipfs ou via un navigateur web.</p>
 	
 	<p>Cette application utilise le noeud IPFS infura. Vous pouvez avec cette application créer des fichiers et les héberger sur IPFS, ou sélectionner tous types de fichiers présents sur votre terminal pour l’héberger sur IPFS.</p>
 	
-	<p>Pour écrire un fichier, rédigez votre texte puis cliquez sur Envoyer. Attendez quelques secondes le temps du chargement. Le chargement sera terminé lorsque vous verrez apparaître le hash du fichier créé et le lien IPFS correspondant.</p>
+	<p>Pour écrire un fichier, rédigez votre texte puis cliquez sur Send. Attendez quelques secondes le temps du chargement. Le chargement sera terminé lorsque vous verrez apparaître le hash du fichier créé et le lien IPFS correspondant.</p>
 	
 	<p>Pour séléctionner un ou plusieurs fichiers présents sur votre terminal et les charger sur IPFS, cliquez sur Choose Files, puis séléctionnez le ou les fichiers désirés. Attendez quelques secondes le temps du chargement. Les chargements seront terminés lorsque vous verrez apparaître le ou les hash du ou des fichiers sélectionnés et leurs liens IPFS correspondants.</p>
 	
 	<p>Pour davantage d’informations sur IPFS, suivez le lien officiel: <a href="https://ipfs.io">Lien officiel</a> Ou ce tutoriel en français: <a href="https://gist.github.com/YannBouyeron/53e6d67782dcff5995754b0a7333fa0b">Tutoriel en français</a>
 	
 	<p>*permanente: tant que au moins un noeud du réseau possèdera un exemplaire de votre fichier !</p>
-	</div>
+	
+	<a href="https://github.com/YannBouyeron/IPFS-API">Github sources</a>
+	</nav>
 	
 	
 	
@@ -178,19 +175,22 @@
 	
 	
 	
-	<div class= "tarea" >
+	<div class="load">
 	
 	<h5 style= "text-align:center;">Rédigez votre texte ici, ou ajoutez un fichier.</h5>
 	
 	<form name='fff'> 
 	
-		<p><textarea name="ttt" id="ttt" rows="10" cols="150" wrap="virtual">Écrivez ici.</textarea></p>
-		<input type='button' onClick='rec_str()' value='Envoyer'>
+		<p><textarea name="ttt" id="ttt" rows="10" cols="150" wrap="virtual" placeholder="Écrivez ici."></textarea></p>
+		<input type='button' onClick='rec_str()' value='Send'>
 		<span><input type="file" id="files" name="files[]" multiple /></span>
 	
 	</form>
-	<div class = "hasher" id='hash'></div>
+	
 	</div>
+	
+	<div class="result" id='hash'></div>
+	
 
 
 
