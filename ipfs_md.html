@@ -79,9 +79,9 @@
 	textarea {
 	
 	position: relative;
-	width: 98%;
+	width: 97%;
 	margin-left: 1%;
-	margin-right: 1%;
+	margin-right: 2%;
 	margin-top: 0%;
 	
 	}
@@ -154,7 +154,8 @@
 					
 					var result = md.render(result)
 					
-					var result = "<!doctype html><html><head><meta charset='utf-8'><title>Title</title></head><body>"+result+"</body></html>"
+					
+					var result = "<!doctype html><html><head><meta charset='utf-8'><title>Title</title><style> ol {list-style: outside decimal;} ul {list-style: outside disc;}li > p {margin-bottom: 12px;} li > ol, li > ul {margin-top: 12px !important; padding-left: 12px;} ol:last-child, ul:last-child {margin-bottom: 12px;} pre {white-space: pre-wrap; margin-bottom: 24px; overflow: hidden; padding: 3px; border-radius: 6px; background-color: #5a5a5a; border-color: #d9d9d9;} code {font-family: Arial, monospace; font-size: 1em; white-space: nowrap; padding: 1px; border-radius: 2px; background-color: #5a5a5a; color: #FAF0E6; font-weight: bold;} pre code {font-size: 10px; white-space: pre-wrap;} blockquote {border-left: 5px solid #5a5a5a; font-size: 90%; margin-left: 0; margin-right: auto; width: 97%; padding: 0 10px; background-color: rgba(51, 37, 15, 0.05); font-family: Times;} table {margin-left: auto; margin-right: auto; margin-bottom: 24px; border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; border-spacing: 0;} table th {padding: 3px 10px; border-top: 1px solid #ddd; border-left: 1px solid #ddd;} table td {padding: 3px 10px; border-top: 1px solid #ddd; border-left: 1px solid #ddd;} img {border: none; display: block; margin: 0 auto; max-width: 100%;}</style></head><body>"+result+"</body></html>"
 					
 					var data = new FormData();
 					
