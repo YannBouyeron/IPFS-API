@@ -2,6 +2,19 @@
 
 Application html/JS permettant de poster du contenu sur IPFS
 
+
+________
+
+HORS SERVICE !!!
+
+Cette application était basée sur infura.io qui est devenu payant....
+
+Utilisez à la place l'application suivante (basée sur mon propre ipfs http gateway)
+
+[http://141.94.203.12:8080/ipfs/QmRtT93cnL3gqZrLub6ATSihaWUb5mtTuvnqraqVaDXXor](http://141.94.203.12:8080/ipfs/QmRtT93cnL3gqZrLub6ATSihaWUb5mtTuvnqraqVaDXXor)
+
+Ou visitez [https://github.com/YannBouyeron/IPFS-HTTP-GATEWAY](https://github.com/YannBouyeron/IPFS-HTTP-GATEWAY)
+
 ________
 
 
