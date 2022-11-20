@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>IPFS API</title>
+<style type="text/css">
+		
+		
+		
+	.grid {
+	
+		display : grid;
+  		grid-gap: 10px;
+		grid-template-columns: 1fr;
+		grid-template-rows: 4fr 1fr 1fr;
+		grid-template-areas: 
+			"load" 
+			"result"
+			"source";
+      		min-height: 680px;
+      		max-height: 680px;
+  		background-color: white;
+	}
+	
+	header {
+  
+		background-color: #e6ecef;
+		grid-area : haut;
+	  	border-radius: 5px;
+	  	padding: 10px;
+	}
+	
+	nav {
+	  
+	  	background-color: #e6ecef;
+	  	grid-area : navi;
+	  	border-radius: 5px;
+	  	padding: 10px;
+	  	overflow: scroll;
+	}
+		
+		
+	.load {
+	
+		background-color: grey;
+		grid-area: load;
+		border-radius: 5px;
+	  	padding: 10px;
+	  	font-size: 1.3em;
+	}
+
+		
+	.result {
+	
+		background-color: grey;
+		grid-area: result;
+		border-radius: 5px;
+	  	padding: 10px;
+	  	overflow: scroll;
+	  	height: 300px;
+	}		
+			
+	.source {
+	
+		background-color: grey;
+		grid-area: source;
+		border-radius: 5px;
+	  	padding: 10px;
+	  	height: 50px;
+	  	padding-top:25px;
+	}		
+			
+			
+	textarea {
+	
+		position: relative;
+		width: 97%;
+		margin-left: 1%;
+		margin-right: 2%;
+		margin-top: 0%;
+	
+	}
+	
+	.thumb {
+		height: 75px;
+		border: 1px solid #000;
+		margin: 10px 5px 0 0; 
+	}
+		 
+			
+		 
+		
+		  
+		  
+		  
+		</style> 
+	
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/remarkable/1.7.1/remarkable.min.js"></script>
+		
+		<script>
+		
+			// Check for the various File API support.
+			if (window.File && window.FileReader && window.FileList && window.Blob) {
+				
+				function rec_str() {
+	
+					var result = document.fff.ttt.value;
+					
+					var xhr = new XMLHttpRequest(); 
+					
+					xhr.open("POST", 'https://ipfs.oversas.org/ipfs/', true);
+					
+					//xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+					//xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+					//xhr.setRequestHeader("Access-Control-Expose-Headers", "*");
+					//xhr.setRequestHeader('Content-Type', 'application/json');
+					
+					xhr.onreadystatechange = function() {
+
+ 						if (xhr.readyState === 4 && xhr.status === 201) {
+  						
+							var hash = xhr.getResponseHeader("ipfs-hash");
+  						
+  							var text = "<div class='cadre'><p style='text-align:center;'>" + hash + "</p><p style='text-align:center;'><a href='https://ipfs.io/ipfs/"+ hash + "'>Lien</a></p></div>"; 
+				    
+				    			document.getElementById('hash').innerHTML += text;	
+ 						};
+					};
+					
+					xhr.send(result);
+					};
+  			
+  			
+  			
+  				function rec_md() {
+	
+					var result= document.fff.ttt.value;
+					
+					var md = new Remarkable();
+					
+					md.set({
+   					html: true,
+    					breaks: true
+						});
+					
+					var result = md.render(result)
+					
+					
+					var result = "<!doctype html><html><head><meta charset='utf-8'><title>Title</title><style> ol {list-style: outside decimal;} ul {list-style: outside disc;}li > p {margin-bottom: 12px;} li > ol, li > ul {margin-top: 12px !important; padding-left: 12px;} ol:last-child, ul:last-child {margin-bottom: 12px;} pre {white-space: pre-wrap; margin-bottom: 24px; overflow: hidden; padding: 3px; border-radius: 6px; background-color: #5a5a5a; border-color: #d9d9d9;} code {font-family: Arial, monospace; font-size: 1em; white-space: nowrap; padding: 1px; border-radius: 2px; background-color: #5a5a5a; color: #FAF0E6; font-weight: bold;} pre code {font-size: 10px; white-space: pre-wrap;} blockquote {border-left: 5px solid #5a5a5a; font-size: 90%; margin-left: 0; margin-right: auto; width: 97%; padding: 0 10px; background-color: rgba(51, 37, 15, 0.05); font-family: Times;} table {margin-left: auto; margin-right: auto; margin-bottom: 24px; border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; border-spacing: 0;} table th {padding: 3px 10px; border-top: 1px solid #ddd; border-left: 1px solid #ddd;} table td {padding: 3px 10px; border-top: 1px solid #ddd; border-left: 1px solid #ddd;} img {border: none; display: block; margin: 0 auto; max-width: 100%;}</style></head><body>"+result+"</body></html>"
+					
+				
+					var xhr = new XMLHttpRequest(); 
+					
+					xhr.open('POST', 'https://ipfs.oversas.org/ipfs/', true);
+					
+					//xhr.setRequestHeader('Content-Type', 'application/json');
+					//xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+					
+					xhr.onreadystatechange = function() {
+
+ 						if (xhr.readyState === 4 && xhr.status === 201) {
+  						
+							var hash = xhr.getResponseHeader("ipfs-hash");
+  						
+				    			var text = "<div class='cadre'><p style='text-align:center;'>" + hash + "</p><p style='text-align:center;'><a href='https://ipfs.io/ipfs/"+ hash + "'>Lien</a></p></div>" 
+				    			
+							document.getElementById('hash').innerHTML += text;	
+ 						};
+					};
+				    
+					xhr.send(result);
+					
+				};
+  			
+  			
+  			
+  			
+			} else {
+  			alert('The File APIs are not fully supported in this browser.');
+			}
+
+		</script>
+		
+  </head>
+  
+  <body>
+	
+	<div class="grid">
+  
+	<div class="load">
+	
+	<h6 style= "text-align:center;">IPFS API</h6>
+	
+	<form name='fff' accept-charset="ISO-8859-1"> 
+	
+		<p><textarea name="ttt" id="ttt" rows="25" cols="150" wrap="virtual" placeholder="Écrivez ici."></textarea></p>
+		<div align=center><input type='button' onClick='rec_str()' value='Send txt'>
+		<span><input type='button' onClick='rec_md()' value='Send md'></span>
+		<span><input type="file" id="files" name="files[]" multiple /></span></div>
+	
+	</form>
+	
+	</div>
+	
+	<div class="result" id='hash'></div>
+	
+	<div class="source" align=center><a href="https://github.com/YannBouyeron/IPFS-API">Github</a></div>
+
+<script>
+  
+	function handleFileSelect(evt) {
+    
+    		var files = evt.target.files; // FileList object
+    
+    		// Loop through the FileList and render image files as thumbnails.
+		for (var i = 0, f; f = files[i]; i++) {
+     
+			var reader = new FileReader();
+			
+      			// Closure to capture the file information.
+      			reader.onload = (function(theFile) {
+       			
+
+        		return function(e) {
+					
+					var xhr = new XMLHttpRequest();
+					
+					xhr.open('POST', 'https://ipfs.oversas.org/ipfs/', true);
+					
+					//xhr.setRequestHeader('Content-Type', 'application/json');
+					//xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+					
+					xhr.send(theFile);
+					
+					xhr.onreadystatechange = function() {
+ 						
+						if (xhr.readyState === 4 && xhr.status === 201) {
+  							
+							var hash = xhr.getResponseHeader("ipfs-hash");
+				    			
+							var text = '<p style= "text-align:center;">' + theFile.name + '</p><p style= "text-align:center;">' + hash + '</p><p style= "text-align:center;"><a href= "https://ipfs.io/ipfs/'+ hash + '">Lien</a></p>' ;
+				    
+				    			var span = document.createElement('span');
+          
+          						span.innerHTML = ['<div class = "cadre"><p style= "text-align:center;" ><img class="thumb" src="', e.target.result, '" title="', escape(theFile.name), '"/>', text, '</p></div>' ].join('');
+          
+          						document.getElementById('hash').insertBefore(span, null);
+  						
+ 						};
+					};
+				};				
+        
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    };
+
+  };
+ 
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+	
+</script>
+
+	
+</div>
+	
+</body>
+</html>
+		

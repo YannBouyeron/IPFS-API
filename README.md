@@ -3,28 +3,10 @@
 Application html/JS permettant de poster du contenu sur IPFS
 
 
-________
+[Nouvelle version 2020 avec convertisseur md -> html](https://ipfs.oversas.org/ipfs/QmTBBUiHgM3jyfHZME85otqNjgWnqFG3pjUet4fioabF1m)
 
-HORS SERVICE !!!
+ipfs hash de l'application: QmTBBUiHgM3jyfHZME85otqNjgWnqFG3pjUet4fioabF1m
 
-Cette application était basée sur infura.io qui est devenu payant....
-
-Utilisez à la place l'application suivante (basée sur mon propre ipfs http gateway)
-
-[http://141.94.203.12:8080/ipfs/QmRtT93cnL3gqZrLub6ATSihaWUb5mtTuvnqraqVaDXXor](http://141.94.203.12:8080/ipfs/QmRtT93cnL3gqZrLub6ATSihaWUb5mtTuvnqraqVaDXXor)
-
-Ou visitez [https://github.com/YannBouyeron/IPFS-HTTP-GATEWAY](https://github.com/YannBouyeron/IPFS-HTTP-GATEWAY)
-
-________
+Attention: Les versions précédentes qui utilisaient le gateway d'indura.io (devenu payant) ne fonctionnent plus. La nouvelle version utilise le gateway [oversas.org](https://oversas.org)
 
 
-[Nouvelle version avec convertisseur md -> html](https://ipfs.io/ipfs/QmNwS2kE3W84bdcEfrWtsDPN5cpGEz8G8Uadfu1WoQNEZ2)
-
-ipfs hash de l'application: QmNwS2kE3W84bdcEfrWtsDPN5cpGEz8G8Uadfu1WoQNEZ2
-
-
-________
-
-[Lien vers l'application](https://ipfs.io/ipfs/QmZFJkMEEE9HNUrUYLLJVaw6mWoYYwdoDtXhXmWV2AeNiX)
-
-ipfs hash de l'application: QmZFJkMEEE9HNUrUYLLJVaw6mWoYYwdoDtXhXmWV2AeNiX
