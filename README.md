@@ -16,11 +16,6 @@ ipfs hash de l'application: QmPvLojuX2mxUqRLSnc6GECHYrb8UZFyshUfT8Ldi2kGky
 
 <p></br></p>
 
-__________________________
-
-*Le client RPC a un problème de CORS (au niveau de la configuration de l'API RPC de oversas.org), il ne fonctionne que si on y accède via le gateway ipfs.oversas.org : https://ipfs.oversas.org/ipfs/QmPvLojuX2mxUqRLSnc6GECHYrb8UZFyshUfT8Ldi2kGky*
-
-*Le client HTTP n'a pas ce problème, il fonctionne depuis n'importe quel gateway.*
 
 __________________________
 
